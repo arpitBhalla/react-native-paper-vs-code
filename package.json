@@ -1,0 +1,70 @@
+{
+  "name": "rnp-snippets",
+  "displayName": "React Native Paper Snippets",
+  "description": "Cross-platform Material Design for React Native.",
+  "private": true,
+  "version": "0.0.1",
+  "publisher": "arpitBhalla",
+  "keywords": [
+    "snippets",
+    "react-native",
+    "react-native-paper"
+  ],
+  "contributors": [
+    {
+      "name": "Arpit Bhalla",
+      "url": "https://github.com/arpitBhalla"
+    }
+  ],
+  "main": "./build/extension.js",
+  "scripts": {
+    "build": "ts-node scripts/generateREADME.ts && prettier --write README.md ",
+    "prerelease": "npm run build && git add . && git commit -m 'PreRelease'  && release-it ",
+    "release": "vsce publish",
+    "prebuild": "tsc",
+    "test-compile": "tsc -p ./"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arpitBhalla/rnp-snippets"
+  },
+  "icon": "icon.jpg",
+  "engines": {
+    "vscode": "^0.10.5"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.rnpButton",
+        "title": "Insert Button Component",
+        "category": "React Native Paper Snippets"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/jscodeshift": "^0.11.0",
+    "@types/react-dom": "^17.0.3",
+    "@types/shallowequal": "^1.1.1",
+    "esbuild": "^0.11.18",
+    "prettier": "^2.2.1",
+    "release-it": "^14.6.1",
+    "ts-node": "^9.1.1",
+    "vsce": "^1.88.0",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "require-glob": "^3.2.0",
+    "jscodeshift": "^0.12.0",
+    "jscodeshift-choose-parser": "^2.0.0",
+    "shallowequal": "^1.1.0"
+  }
+}
