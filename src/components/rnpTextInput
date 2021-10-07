@@ -1,0 +1,8 @@
+import snip from "../snip";
+
+export const body = snip`
+ <TextInput
+      label={"$#"}
+      value={$#}
+      onChangeText={$#}
+    />`;
